@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Header, Flex, Input, Tree, Button } from "@fluentui/react-northstar";
 import { NavigationItem } from "../../types";
 
@@ -58,7 +58,7 @@ const SettingItem = (props: ISettingItemProps) => {
     );
 
     let filteredArr = navItems.filter((item: NavigationItem) =>
-      item.content.includes(e.target.value)
+      item.content.toLowerCase().includes(e.target.value.toLowerCase())
     );
 
     setTreeItems(filteredArr.map(convertToNavItem));
@@ -93,11 +93,10 @@ const SettingItem = (props: ISettingItemProps) => {
 
   const handleEntrySubmit = () => {
     let newEntryItem: any = {
-      id: `navigation-item-${treeItems.length + 1}`,
+      id: `menuItem${treeItems.length + 1}`,
       title: newEntry,
     };
     setTreeItems((prevState) => [...prevState, newEntryItem]);
-    handleSave();
     setNewEntry("");
     setToggleInput(false);
   };
@@ -147,7 +146,6 @@ const SettingItem = (props: ISettingItemProps) => {
             value={newEntry}
             onChange={(e: any) => handleChange(e)}
             autoFocus
-            fluid
           />
         )}
         {newEntry.length >= 3 && (

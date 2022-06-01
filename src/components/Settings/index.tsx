@@ -8,7 +8,6 @@ interface ISettingsProps {
 
 const Settings = (props: ISettingsProps) => {
   const [activeSubMenu, setActiveSubMenu] = useState(0);
-
   const settingSteps = [
     {
       key: "settings-step-1",

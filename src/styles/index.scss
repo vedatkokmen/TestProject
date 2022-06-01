@@ -86,7 +86,7 @@ body {
   margin: 1rem;
   border-radius: 0.5rem;
   background-color: #fff;
-  box-shadow: 0.5rem 0.5rem 0.6rem 0 grey;
+  box-shadow: 0.5rem 0.5rem 0.6rem 0 #e3e3e3;
   .settings_menu_container {
     padding: 1rem;
     flex: 1;
@@ -146,10 +146,6 @@ body {
       }
     }
 
-    .settings_entry_container {
-      margin: 1rem 0;
-    }
-
     .settings_content_tree {
       span,
       a {
@@ -160,13 +156,6 @@ body {
     .settings_action_btns {
       margin-top: 20vh;
       margin-bottom: 1rem;
-    }
-  }
-
-  .settings_input {
-    width: 16rem;
-    input {
-      width: 100%;
     }
   }
 
